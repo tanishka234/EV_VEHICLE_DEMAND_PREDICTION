@@ -46,7 +46,7 @@ This AI-powered tool forecasts **EV demand across counties** in Washington State
 
 ---
 ## DEMO Screen Shots
-<img width="918" height="795" alt="Screenshot 2025-08-02 211551" src="https://github.com/user-attachments/assets/0a3ef137-291c-4be8-abe9-b89b96d0ad93" />
+<img width="894" height="795" alt="Screenshot 2025-08-02 211551" src="https://github.com/user-attachments/assets/9abbb866-e9d3-492d-a726-3254f5b81569" />
 <img width="828" height="709" alt="Screenshot 2025-08-02 211617" src="https://github.com/user-attachments/assets/2a6164ed-fcfd-430f-afbb-9e27989e91f8" />
 <img width="830" height="567" alt="Screenshot 2025-08-02 211627" src="https://github.com/user-attachments/assets/135d194a-28fd-40af-9c55-c98ac348fc28" />
 
