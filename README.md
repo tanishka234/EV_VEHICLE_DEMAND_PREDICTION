@@ -1,40 +1,48 @@
-# 🌟 EV Charging Demand Prediction
+# ⚡ EV Charging Demand Prediction & Forecasting Dashboard
 
-**Python** | **Streamlit** | **scikit-learn** | **Heroku/Streamlit Cloud** | **MIT License**
+<div align="center">
 
-An AI-powered application that predicts Electric Vehicle (EV) adoption trends across counties using historical data and visualizes 3-year forecasts in a Streamlit dashboard. Ideal for urban planners, green tech initiatives, and infrastructure optimization.
+![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python\&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.x-red?logo=streamlit\&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-1.x-orange?logo=scikitlearn\&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+![GitHub Stars](https://img.shields.io/github/stars/tanishka234/EV_VEHICLE_DEMAND_PREDICTION?style=social)
+
+*An AI-powered interactive dashboard that forecasts Electric Vehicle (EV) adoption trends at the county level using machine learning. Built with Streamlit and scikit-learn for planners, researchers, and smart mobility solutions.*
+
+[🚀 Quick Start](#-quick-start) • [📖 Features](#-features--use-cases) • [🧠 ML Pipeline](#-machine-learning-pipeline) • [📊 Deployment](#-deployment-options) • [🤝 Contributing](#-contributing)
+
+</div>
 
 ---
 
-## 🚀 Quick Start • 📖 Features • 🧠 ML Pipeline • 📊 Deployment • 🤝 Contributing
+## 📑 Table of Contents
 
----
-
-## 📃 Table of Contents
-
-* 🌟 Overview
-* 🚀 Quick Start
-* ✨ Features & Use Cases
-* 📊 Dataset
-* 🧠 ML Pipeline
-* 🛠️ Technical Details
-* 📅 Setup & Installation
-* 🌚 Forecast Examples
-* 📊 Charts & Outputs
-* 🚀 Deployment Options
-* 🤝 Contributing
-* 📄 License
-* 📧 Contact
+* [🌟 Overview](#-overview)
+* [🚀 Quick Start](#-quick-start)
+* [✨ Features & Use Cases](#-features--use-cases)
+* [📊 Dataset](#-dataset)
+* [🧠 Machine Learning Pipeline](#-machine-learning-pipeline)
+* [🛠️ Technical Details](#-technical-details)
+* [📅 Setup & Installation](#-setup--usage)
+* [🌚 Forecast Examples](#-example-forecasts)
+* [📊 Visualization Outputs](#-visualization-outputs)
+* [🚀 Deployment Options](#-deployment-options)
+* [🤝 Contributing](#-contributing)
+* [📄 License](#-license)
+* [📧 Contact](#-contact)
 
 ---
 
 ## 🌟 Overview
 
-This project provides county-level EV demand forecasting based on historical adoption trends from Washington State. It enables:
+This AI-powered tool forecasts **EV demand across counties** in Washington State using machine learning and displays results in a user-friendly dashboard.
 
-* ✅ ML-based 36-month demand forecasting
-* 📈 Growth analysis for targeted infrastructure planning
-* 📊 Easy-to-use interactive dashboard built with Streamlit
+**Capabilities:**
+
+* 🔮 Predicts 36-month EV growth trends
+* 📈 Helps city planners optimize infrastructure
+* 🖥️ Streamlit-based dashboard for visualization and interaction
 
 ---
 
@@ -55,67 +63,73 @@ cd EV_VEHICLE_DEMAND_PREDICTION
 # Install dependencies
 pip install -r requirements.txt
 
-# Launch the Streamlit app
+# Run the application
 streamlit run app.py
 ```
 
-> 🌐 Visit [http://localhost:8501](http://localhost:8501) in your browser.
+🌐 App URL: [http://localhost:8501](http://localhost:8501)
 
 ---
 
 ## ✨ Features & Use Cases
 
-| Feature                 | Description                                 |
-| ----------------------- | ------------------------------------------- |
-| 📅 3-Year Forecast      | Predict EV growth for each county           |
-| 🏢 Urban Planning Tool  | Optimize charging stations by future demand |
-| 📊 Visual Dashboard     | Streamlit-based interactive charts          |
-| 🔄 Compare Counties     | Analyze multiple counties side-by-side      |
-| 📊 Time-Series Analysis | Random Forest applied to temporal features  |
+| Feature                | Description                              |
+| ---------------------- | ---------------------------------------- |
+| 📅 3-Year Forecast     | Predict EV adoption for each county      |
+| 📊 Visual Dashboard    | Interactive Streamlit UI                 |
+| 🔄 Compare Counties    | Analyze demand side-by-side              |
+| 🏢 Planning Tool       | Guide infrastructure investment          |
+| ⚡ Time Series Modeling | ML-based forecasting using Random Forest |
 
 ---
 
 ## 📊 Dataset
 
 **Source:** [Washington State EV Population](https://catalog.data.gov/dataset/electric-vehicle-population-data)
-**File:** `Electric_Vehicle_Population_By_County.csv`
 
-| Column                | Description                      |
-| --------------------- | -------------------------------- |
-| County                | County name                      |
-| Electric Vehicle Type | Battery Electric, Plug-in Hybrid |
-| Model Year            | Year of vehicle registration     |
-| Forecast Target       | Total vehicle counts per county  |
+**Input CSV:** `Electric_Vehicle_Population_By_County.csv`  → `preprocessed_ev_data.csv`
 
-Processed version: `preprocessed_ev_data.csv`
+| Column          | Description                     |
+| --------------- | ------------------------------- |
+| County          | Washington counties             |
+| Model Year      | Registration year               |
+| EV Type         | Battery/Plug-in Hybrid          |
+| Forecast Target | Vehicle counts by county & year |
 
 ---
 
 ## 🧠 Machine Learning Pipeline
 
-**Model:** RandomForestRegressor
+**Model:** `RandomForestRegressor` (via scikit-learn)
 
-* **Input Features:** County, Year, EV type
-* **Output:** Predicted EV counts for next 36 months
-* **Training:** Performed in `EV_Adoption_Forecasting.ipynb`
-* **Model Saved As:** `forecasting_ev_model.pkl`
+```
+Input Features: County, Year, EV type
+↓
+Data Preprocessing: Encoding + Aggregation
+↓
+Model Training: EV_Adoption_Forecasting.ipynb
+↓
+Model Output: EV growth for next 36 months
+↓
+Saved Model: forecasting_ev_model.pkl
+```
 
 ---
 
 ## 🛠️ Technical Details
 
-| Component        | Tool/Lib Used              |
+| Component        | Tool/Library Used          |
 | ---------------- | -------------------------- |
-| Model Training   | scikit-learn               |
-| Visualization    | Streamlit                  |
-| Deployment       | Streamlit Cloud, Heroku    |
+| ML Model         | scikit-learn               |
+| Dashboard        | Streamlit                  |
+| Deployment       | Heroku / Streamlit Cloud   |
 | Environment Mgmt | requirements.txt, Procfile |
 
 ---
 
 ## 📅 Setup & Usage
 
-### Step 1: Prepare Environment
+### Step 1: Clone & Install
 
 ```bash
 git clone https://github.com/tanishka234/EV_VEHICLE_DEMAND_PREDICTION.git
@@ -123,66 +137,66 @@ cd EV_VEHICLE_DEMAND_PREDICTION
 pip install -r requirements.txt
 ```
 
-### Step 2: Run the App
+### Step 2: Launch Dashboard
 
 ```bash
 streamlit run app.py
 ```
 
-> Output at: [http://localhost:8501](http://localhost:8501)
+> Open [http://localhost:8501](http://localhost:8501) in your browser
 
 ---
 
 ## 🌚 Example Forecasts
 
-1. **King County**:
+### 1. **King County**
 
-   * 2025: \~42,000 EVs
-   * 2026: \~51,000 EVs
-   * 2027: \~61,000 EVs
+* 2025: \~42,000 EVs
+* 2026: \~51,000 EVs
+* 2027: \~61,000 EVs
 
-2. **Spokane County**:
+### 2. **Spokane County**
 
-   * 2025: \~5,600 EVs
-   * 2026: \~7,000 EVs
-   * 2027: \~8,700 EVs
+* 2025: \~5,600 EVs
+* 2026: \~7,000 EVs
+* 2027: \~8,700 EVs
 
 ---
 
 ## 📊 Visualization Outputs
 
-* Line chart: EV growth per county
-* Bar chart: County comparison by year
-* Pie chart: EV type distribution
+* 📈 Line Graph: Growth per county
+* 📊 Bar Chart: Annual comparisons
+* 🥧 Pie Chart: EV Type breakdown
 
 ---
 
 ## 🚀 Deployment Options
 
-| Platform          | Instructions                      |
-| ----------------- | --------------------------------- |
-| Localhost         | `streamlit run app.py`            |
-| Streamlit Cloud   | Connect repo + deploy via UI      |
-| Heroku            | Add `Procfile` + GitHub deploy    |
-| Docker (optional) | Build custom image (not included) |
+| Platform          | Instructions                |
+| ----------------- | --------------------------- |
+| ✅ Localhost       | `streamlit run app.py`      |
+| ✅ Streamlit Cloud | Connect repo & deploy       |
+| ✅ Heroku          | Add `Procfile`, auto-deploy |
+| 🔜 Docker         | (Optional, not included)    |
 
 ---
 
 ## 🤝 Contributing
 
-### How to Contribute
+### 🚀 How to Contribute
 
-* Fork this repo
-* Create a new branch: `feature/your-feature`
-* Make changes and commit: `git commit -m "Add awesome feature"`
-* Push: `git push origin feature/your-feature`
-* Open a Pull Request
+1. Fork this repository
+2. Create a branch: `feature/your-feature`
+3. Commit your changes
+4. Push and submit a Pull Request
 
-### Development Ideas
+### 🧠 Development Ideas
 
-* Add EV pricing trend forecast
-* Include population density as a feature
-* Improve forecasting with XGBoost or Prophet
+* Add forecasting by fuel type
+* Integrate population & income features
+* Add Prophet/XGBoost model option
+* Enhance UI with charts or filters
 
 ---
 
@@ -195,11 +209,8 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 ## 📧 Contact
 
 **Author:** Tanishka Jain
-**GitHub:** [tanishka234](https://github.com/tanishka234)
+**GitHub:** [@tanishka234](https://github.com/tanishka234)
 
-Feel free to open an issue for bugs or suggestions!
+> ✨ Empowering sustainable mobility with data and machine learning.
 
----
-
-> ✨ *Empowering green mobility through data & AI.*
 
